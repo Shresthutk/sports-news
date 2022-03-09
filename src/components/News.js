@@ -63,7 +63,7 @@ export class News extends Component {
       <>
         <div className="custom-margin">
          {this.state.loading && <Spinner/>}
-          {this.state.articles.map((element) => {
+          {this.state.articles && this.state.articles.map((element) => {
             return (
               <div key={element.url}>
                 <Newsitem

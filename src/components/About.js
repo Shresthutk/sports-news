@@ -1,5 +1,4 @@
 import React, { Component } from 'react'
-import Abouticon from './Abouticon'
 import Header from './Header'
 import Navbar from './Navbar'
 

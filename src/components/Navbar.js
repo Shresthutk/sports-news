@@ -19,7 +19,7 @@ export class Navbar extends Component {
         >
           <div className="navbar-brand">
             <Link className="navbar-item" to="/">
-              <img src={logo} width="60" height="28" className="circle" />
+              <img src={logo} width="60" height="28" className="circle" alt="logo" />
             </Link>
 
             <span

@@ -7,6 +7,7 @@ import {
   BrowserRouter,
   Routes,
   Route,
+  HashRouter
 } from "react-router-dom";
 
 
@@ -14,13 +15,13 @@ export default class App extends Component {
   render() {
     return (
       <>
-        <BrowserRouter>
+        <HashRouter>
             <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/About" element={<About />} />
             <Route path="/Contact" element={<Contact />} />
             </Routes>
-        </BrowserRouter>
+        </HashRouter>
       </>
     )
   }
