@@ -1,0 +1,44 @@
+@import "https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css";
+.dark-bg{
+    background-color: #0a1929;
+}
+.circle{
+    border-radius: 22%;
+
+}
+.imgbox{
+    width: 194px;
+}
+.light-font{
+    color: white;
+}
+.dark-bg-secondry{
+    background-color: rgb(0 30 60);
+}
+.wheatsmoke{
+    color: whitesmoke;
+}
+.wheat{
+    color: wheat;
+}
+.custom-margin{
+    margin-bottom: -15px;
+    margin-right: -1px;
+}
+
+.custom-height{
+    height: 100vh;
+}
+.custom-height-2{
+    height: 29vh;
+}
+
+ul li a:hover{
+    color: wheat;
+}
+ul{
+    height: 50vh;
+}
+li{
+    margin-top:2vh ;
+}
