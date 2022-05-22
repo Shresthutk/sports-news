@@ -8,11 +8,10 @@ export class News extends Component {
     this.state = {
       articles: [],
       loading: false,
-      page: 1,
     };
   }
   async componentDidMount() {
-    let url = `https://newsapi.org/v2/top-headlines?country=in&category=sports&apiKey=84aa1329f4514b1d9bbad9084312f3fc&page=1&pageSize=${this.props.pagesize}`;
+    let url = `https://gnews.io/api/v4/top-headlines?token=2ad2e3ce71552ef8745444020b6cb20a&lang=en&country=in`;
     this.setState({loading:true})
     let data = await fetch(url);
     let parsedData = await data.json();
@@ -24,39 +23,7 @@ export class News extends Component {
     });
   }
 
-  previousbtn = async () => {
-   
-    let url = `https://newsapi.org/v2/top-headlines?country=in&category=sports&apiKey=84aa1329f4514b1d9bbad9084312f3fc&page=${
-      this.state.page - 1
-    }&${this.props.pagesize}`;
-    this.setState({loading:true});
-    let data = await fetch(url);
-    let parsedData = await data.json();
-    // console.log(parsedData);
-    this.setState({ articles: parsedData.articles });
-    this.setState({
-      page: this.state.page - 1,
-      loading:false
-    });
-  };
-
-  nextbtn = async () => {
-   
-    
-      let url = `https://newsapi.org/v2/top-headlines?country=in&category=sports&apiKey=84aa1329f4514b1d9bbad9084312f3fc&page=${
-        this.state.page + 1
-      }&${this.props.pagesize}`;
-      this.setState({loading:true});
-      let data = await fetch(url);
-      let parsedData = await data.json();
-      // console.log(parsedData);
-      this.setState({ articles: parsedData.articles });
-      this.setState({
-        page: this.state.page + 1,
-        loading:false
-      });
-    
-  };
+  
 
   render() {
     return (
@@ -68,7 +35,7 @@ export class News extends Component {
               <div key={element.url}>
                 <Newsitem
                   author={element.author && element.author}
-                  urltoimage={element.urlToImage && element.urlToImage}
+                  image={element.image && element.image}
                   time={element.publishedAt && element.publishedAt}
                   title={element.title && element.title}
                 />
@@ -77,16 +44,7 @@ export class News extends Component {
           })}
         </div>
         <div className="container is-flex is-flex-direction-row is-justify-content-space-between ">
-          <button
-            disabled={this.state.page <= 1}
-            className="button is-dark"
-            onClick={this.previousbtn}
-          >
-            &larr; Previous
-          </button>
-          <button disabled={this.state.page+1 > Math.ceil(this.state.totalresults/20)} className="button is-dark" onClick={this.nextbtn}>
-            Next &rarr;
-          </button>
+        
         </div>
       </>
     );

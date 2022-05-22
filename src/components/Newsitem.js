@@ -8,7 +8,7 @@ export class Newsitem extends Component {
                         <div className="card is-flex dark-bg-secondry" >
                 <div className="card-image">
                     <figure className="imgbox ">
-                    <img src={this.props.urltoimage} alt="Placeholder image"/>
+                    <img src={this.props.image} alt="Placeholder image"/>
                     </figure>
                 </div>
                 <div className="card-content">

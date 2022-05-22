@@ -9,8 +9,8 @@ export default class Home extends Component {
       <div>
         <>
           <Navbar />
-          <Header heading="Sports IN-Glance" />
-          <News pagesize="10" />
+          <Header heading="News IN-Glance" />
+          <News />
         </>
       </div>
     );
